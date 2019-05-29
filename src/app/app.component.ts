@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { AuthService } from './service/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,23 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.sass']
 })
 export class AppComponent {
+
+  constructor(
+    public auth: AuthService,
+    private router: Router
+    ) {}
+
   title = 'モッチャムチケット';
+
+  toLogin() {
+    this.router.navigate(['/login'])
+  }
+
+  toSignup() {
+    this.router.navigate(['/signup'])
+  }
+
+  logout() {
+    this.auth.logout();
+  }
 }

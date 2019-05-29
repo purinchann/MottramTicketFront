@@ -1,3 +1,43 @@
-<p>
-  login works!
-</p>
+
+<div class="main-div">
+  <mat-card>
+      <mat-card-title>ログイン</mat-card-title>
+      <mat-card-content>
+          <table mat-table>
+            <tr mat-row>
+                <button mat-raised-button color="link" class="google-button" (click)="googleLogin()">Googleでログイン</button>
+            </tr>
+          </table>
+          <mat-divider></mat-divider>
+          <table mat-table class="row">
+              <tr mat-row>
+                <mat-form-field appearance="outline" class="textfield-row" [formGroup]="loginForm">
+                  <mat-label>メールアドレス</mat-label>
+                  <input matInput type="email" class="input" formControlName="email" required>
+                </mat-form-field>
+              </tr>
+              <tr mat-row>
+                <mat-form-field appearance="outline" class="textfield-row" [formGroup]="loginForm">
+                  <mat-label>パスワード</mat-label>
+                  <input matInput type="password" class="input" formControlName="password" required>
+                </mat-form-field>
+              </tr>
+              <tr mat-row>
+                <button mat-raised-button color="warn" class="textfield-row" (click)="login()">ログイン</button>
+              </tr>
+              <tr mat-row>
+                <a class="text-row" routerLink="/forget">パスワードをお忘れですか？</a>
+              </tr>
+          </table>
+          <mat-divider></mat-divider>
+          <table mat-table>
+              <tr>
+                <p class="text-row">または</p>
+              </tr>
+              <tr mat-row> 
+                <span><button mat-stroked-button (click)="toSignup()" color="warn" class="signup-button">新規登録はこちら</button></span>
+              </tr>
+          </table>
+      </mat-card-content>
+  </mat-card>
+</div>

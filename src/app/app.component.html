@@ -1,6 +1,15 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    {{ title }}!
-  </h1>
-</div>
+<!--The content below is only a placeholder and can be replaced. -->
+<mat-toolbar class="toolbar-white">
+  <span><a class="title-black" routerLink="/">Mottram Ticket</a></span>
+  <div *ngIf="(auth.authState | async)  else notLogin">
+      <span><a routerLink="/dashboard"><button mat-icon-button><mat-icon aria-label="Example home icon">home</mat-icon></button></a></span>
+      <span class="right-position"><button  mat-button color="basic" (click)="logout()">ログアウト</button></span>
+  </div>
+  <ng-template #notLogin>
+      <div class="right-position">
+          <button mat-button class="auth-header-button" (click)="toSignup()">新規登録</button>
+          <button mat-button class="auth-header-button" (click)="toLogin()">ログイン</button>
+      </div>
+  </ng-template>
+</mat-toolbar>
+<router-outlet></router-outlet>

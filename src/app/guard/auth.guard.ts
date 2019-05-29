@@ -3,6 +3,7 @@ import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree } fro
 import { Observable } from 'rxjs';
 
 import { Router } from '@angular/router';
+import { AngularFireAuth } from 'angularfire2/auth';
 import { map, take, tap } from 'rxjs/operators';
 import { AuthService } from './../service/auth.service';
 

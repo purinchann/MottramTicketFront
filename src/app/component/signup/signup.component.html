@@ -1,0 +1,38 @@
+
+<div class="main-div">
+    <mat-card>
+        <mat-card-title>新規登録</mat-card-title>
+        <mat-card-content>
+            <table mat-table>
+              <tr mat-row>
+                  <button mat-raised-button color="link" class="google-button" (click)="googleSignup()">Googleで登録</button>
+              </tr>
+            </table>
+            <mat-divider></mat-divider>
+            <table mat-table class="row">
+                <tr mat-row>
+                  <mat-form-field appearance="outline" class="textfield-row"  [formGroup]="signupForm">
+                    <mat-label>メールアドレス</mat-label>
+                    <input matInput type="email" class="input" formControlName="email" required>
+                  </mat-form-field>
+                </tr>
+                <tr mat-row>
+                  <mat-form-field appearance="outline" class="textfield-row" [formGroup]="signupForm">
+                    <mat-label>パスワード</mat-label>
+                    <input matInput type="password" class="input" formControlName="password" required>
+                  </mat-form-field>
+                  <p>※ 記憶力に自信がある人もパスワードをメモるようにお願いします</p>
+                </tr>
+                <tr mat-row>
+                  <button mat-raised-button color="warn" class="textfield-row" (click)="signup()">新規登録</button>
+                </tr>
+            </table>
+            <mat-divider></mat-divider>
+            <table mat-table>
+                <tr mat-row>
+                  <span><a routerLink="/login"><button mat-stroked-button color="warn" class="login-button">ログインはこちら</button></a></span>
+                </tr>
+            </table>
+        </mat-card-content>
+    </mat-card>
+  </div>
