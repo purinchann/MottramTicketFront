@@ -14,8 +14,6 @@ export class AppComponent {
     private router: Router
     ) {}
 
-  title = 'モッチャムチケット';
-
   toLogin() {
     this.router.navigate(['/login'])
   }

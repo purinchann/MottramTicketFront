@@ -1,9 +1,11 @@
 <!--The content below is only a placeholder and can be replaced. -->
 <mat-toolbar class="toolbar-white">
   <span><a class="title-black" routerLink="/">Mottram Ticket</a></span>
-  <div *ngIf="(auth.authState | async)  else notLogin">
-      <span><a routerLink="/dashboard"><button mat-icon-button><mat-icon aria-label="Example home icon">home</mat-icon></button></a></span>
-      <span class="right-position"><button  mat-button color="basic" (click)="logout()">ログアウト</button></span>
+  <div *ngIf="(auth.authState | async)  else notLogin" class="right-position">
+      <span><a routerLink="/dashboard"><button mat-icon-button class="menu-title"><mat-icon class="icon">home</mat-icon>ホーム</button></a></span>
+      <span><a routerLink="/dashboard"><button mat-icon-button class="menu-title"><mat-icon class="icon">shopping_cart</mat-icon>注文履歴</button></a></span>
+      <span><a routerLink="/dashboard"><button mat-icon-button class="menu-title"><mat-icon matBadge="15" matBadgeColor="primary" class="icon">notifications</mat-icon>メッセージ</button></a></span>
+      <span><button  mat-button color="basic" (click)="logout()" class="menu-title">ログアウト</button></span>
   </div>
   <ng-template #notLogin>
       <div class="right-position">

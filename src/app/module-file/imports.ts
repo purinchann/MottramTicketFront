@@ -25,6 +25,8 @@ import { MatIconModule } from '@angular/material/icon';
 import {MatChipsModule} from '@angular/material/chips';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatListModule} from '@angular/material/list';
+import {MatBadgeModule} from '@angular/material/badge';
+import {MatMenuModule} from '@angular/material/menu';
 
 export const imports = [
     BrowserModule,
@@ -51,6 +53,8 @@ export const imports = [
     MatChipsModule,
     MatDividerModule,
     MatListModule,
+    MatBadgeModule,
+    MatMenuModule,
     //FlexLayout
     FlexLayoutModule
 ]
