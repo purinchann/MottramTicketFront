@@ -28,11 +28,23 @@ export class CartDataStore {
     })
   }
 
-  findAll(): Observable<Cart[]> {
-    return this.api.afs.collection<Cart>(CartDataStore.PATH).valueChanges()
+  whereByUserId(uid: string): Observable<Cart[]> {
+      return this.api.afs.collection<Cart>(CartDataStore.PATH, ref => ref.where('user_id', '==', uid)).valueChanges()
   }
 
-  whereByUserId(uid: string) {
-      return this.api.afs.collection<Cart[]>(CartDataStore.PATH, ref => ref.where('user_id', '==', uid)).valueChanges()
+  update(id: string): Promise<boolean> {
+    return this.api.afs.doc(`${CartDataStore.PATH}/${id}`).update({'is_order': true}).then(res => {
+      return true
+    }).catch(err => {
+      return false
+    })
+  }
+
+  delete(id: string): Promise<boolean> {
+    return this.api.afs.doc(`${CartDataStore.PATH}/${id}`).delete().then(() => {
+      return true
+    }).catch(err => {
+      return false
+    })
   }
 }

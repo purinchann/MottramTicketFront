@@ -7,6 +7,7 @@ import { MenuDataStore } from 'src/app/store/menu.store';
 import { ShopDataStore } from 'src/app/store/shop.store';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { CartDataStore } from '../store/cart.store';
+import { OrderDataStore } from '../store/order.store';
 
 export const providers = [
     AngularFirestore,
@@ -20,6 +21,7 @@ export const providers = [
     MenuDataStore,
     ShopDataStore,
     CartDataStore,
+    OrderDataStore,
 
     MatDatepickerModule
 ]

@@ -8,4 +8,5 @@ export interface Cart {
     updated_at?: number;
     menu_id?: string;
     shop_id?: string;
+    is_order?: boolean;
 }

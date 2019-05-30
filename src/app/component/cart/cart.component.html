@@ -1,0 +1,26 @@
+<mat-card class="base-card">
+    <table mat-table>
+        <thead>
+          <tr>
+            <th>商品名</th>
+            <th>サイズ</th>
+            <th>価格</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let cart of cartList; let i = index">
+                <td>{{ cart.menu_name }}</td>
+                <td>{{ cart.size }}</td>
+                <td>{{ cart.price }}</td>
+                <td><button mat-stroked-button color="warn" class="delete-button" (click)="deleteCart(cart.id)">カートから削除</button></td>
+            </tr>
+        </tbody>
+      </table>
+</mat-card>
+<mat-card class="footer-card">
+    <mat-card-content class="order-card">
+      <p>こちらのボタンをクリックしたら注文が確定します。</p>
+      <button mat-raised-button color="warn" class="order-button" (click)="addOrder()">注文を確定する</button>
+    </mat-card-content>
+</mat-card>
