@@ -41,7 +41,7 @@ export class DashboardComponent implements OnInit {
     this.menuDataStore.findAll().subscribe(docs => {
       this.menus = docs
       .filter(v => {
-        return v.handling_shop_number.split(",").includes("4")
+        return v.handling_shop_number.split(",").includes("4") && !v.is_sold_out
       })
     })
 
@@ -63,6 +63,8 @@ export class DashboardComponent implements OnInit {
     const uid = this.auth.currentUserId()
 
     const selectValue = this.selectedForm.get('size_and_price').value as string
+    if (selectValue == '') return
+
     const size = selectValue.split('/')[0].replace('サイズ', '')
     const priceStr = selectValue.split('/')[1].replace('¥', '')
     const price = Number(priceStr)
@@ -74,11 +76,16 @@ export class DashboardComponent implements OnInit {
       'created_at': timestamp,
       'menu_id': menu.id,
       'shop_id': this.shop.id,
+      'is_order': false
     }
     this.cartDataStore.add(params).then(res => {
       if (res) {
         this.selectedForm.setValue({size_and_price: ''})
       }
     })
+  }
+
+  toCartPage() {
+    this.router.navigate(['/cart'])
   }
 }

@@ -38,7 +38,7 @@
 </mat-grid-list>
 <mat-card class="footer-card">
     <mat-card-content class="order-card">
-      <p>このボタンを押しても注文は確定しません。つぎの注文確定画面で最終決定できるようになっています。</p>
-      <button mat-raised-button color="warn" class="order-button">注文確定画面へ進む</button>
+      <p>カート画面から注文を確定させてください。</p>
+      <button mat-raised-button color="warn" class="order-button" (click)="toCartPage()">カート画面へ進む</button>
     </mat-card-content>
 </mat-card>
