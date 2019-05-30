@@ -42,6 +42,8 @@ export class CartComponent implements OnInit {
   }
 
   addOrder() {
+
+    if (this.cartList.length == 0) return;
     const lastIndex = this.cartList.length - 1
     this.cartList.forEach((v, i) => {
       this.cartDataStore.update(v.id).then(isRes => {
