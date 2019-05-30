@@ -3,7 +3,8 @@
   <span><a class="title-black" routerLink="/">Mottram Ticket</a></span>
   <div *ngIf="(auth.authState | async)  else notLogin" class="right-position">
       <span><a routerLink="/dashboard"><button mat-icon-button class="menu-title"><mat-icon class="icon">home</mat-icon>ホーム</button></a></span>
-      <span><a routerLink="/dashboard"><button mat-icon-button class="menu-title"><mat-icon class="icon">shopping_cart</mat-icon>注文履歴</button></a></span>
+      <span><a routerLink="/dashboard"><button mat-icon-button class="menu-title"><mat-icon class="icon">shopping_cart</mat-icon>カート</button></a></span>
+      <span><a routerLink="/dashboard"><button mat-icon-button class="menu-title"><mat-icon class="icon">history</mat-icon>注文</button></a></span>
       <span><a routerLink="/dashboard"><button mat-icon-button class="menu-title"><mat-icon matBadge="15" matBadgeColor="primary" class="icon">notifications</mat-icon>メッセージ</button></a></span>
       <span><button  mat-button color="basic" (click)="logout()" class="menu-title">ログアウト</button></span>
   </div>
