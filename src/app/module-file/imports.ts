@@ -29,6 +29,7 @@ import {MatBadgeModule} from '@angular/material/badge';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatExpansionModule} from '@angular/material/expansion';
+import {MatTabsModule} from '@angular/material/tabs';
 
 export const imports = [
     BrowserModule,
@@ -59,6 +60,7 @@ export const imports = [
     MatMenuModule,
     MatGridListModule,
     MatExpansionModule,
+    MatTabsModule,
     //FlexLayout
     FlexLayoutModule
 ]

@@ -52,7 +52,7 @@ export class DashboardComponent implements OnInit {
 
   sizeAndPrices(text: string): string[] {
     return text.split(',').map(v => {
-      const size = `${v.slice(0)}サイズ`
+      const size = `${v.slice(0, 1)}サイズ`
       const price = `¥${v.slice(1)}`
       return `${size}/${price}`
     })

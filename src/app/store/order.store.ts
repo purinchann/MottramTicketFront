@@ -32,7 +32,11 @@ export class OrderDataStore {
     return this.api.afs.collection<Order>(OrderDataStore.PATH, ref => ref.where('user_id', '==', uid)).valueChanges()
   }
 
-  update(id: string, params: {[key: string]: any}) {
-    this.api.afs.doc(OrderDataStore.PATH+`/${id}`).update(params);
+  update(id: string, params: {[key: string]: any}): Promise<boolean> {
+    return this.api.afs.doc(OrderDataStore.PATH+`/${id}`).update(params).then(() => {
+        return true
+    }).catch(err => {
+        return false
+    })
   }
 }
