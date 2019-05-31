@@ -11,8 +11,8 @@
         <tbody>
             <tr *ngFor="let cart of cartList; let i = index">
                 <td>{{ cart.menu_name }}</td>
-                <td>{{ cart.size }}</td>
-                <td>{{ cart.price }}</td>
+                <td>{{ cart.size }}サイズ</td>
+                <td>¥{{ cart.price }}</td>
                 <td><button mat-stroked-button color="warn" class="delete-button" (click)="deleteCart(cart.id)">カートから削除</button></td>
             </tr>
         </tbody>
