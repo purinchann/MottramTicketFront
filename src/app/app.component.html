@@ -5,7 +5,7 @@
       <span><a routerLink="/dashboard"><button mat-icon-button class="menu-title"><mat-icon class="icon">home</mat-icon>ホーム</button></a></span>
       <span><a routerLink="/cart"><button mat-icon-button class="menu-title"><mat-icon class="icon">shopping_cart</mat-icon>カート</button></a></span>
       <span><a routerLink="/order"><button mat-icon-button class="menu-title"><mat-icon class="icon">history</mat-icon>注文</button></a></span>
-      <span><a routerLink="/dashboard"><button mat-icon-button class="menu-title"><mat-icon matBadge="{{ newMessageCount }}" matBadgeColor="primary" class="icon">notifications</mat-icon>メッセージ</button></a></span>
+      <span><a routerLink="/message"><button mat-icon-button class="menu-title"><mat-icon matBadge="{{ showBadgeCount() }}" matBadgeColor="primary" class="icon">notifications</mat-icon>メッセージ</button></a></span>
       <span><button  mat-button color="basic" (click)="logout()" class="menu-title">ログアウト</button></span>
   </div>
   <ng-template #notLogin>

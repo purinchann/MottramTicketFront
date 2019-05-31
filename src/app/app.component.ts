@@ -27,12 +27,17 @@ export class AppComponent {
       if (this.auth.authState) {
         this.auth.user.subscribe(v => {
           this.messageDataStore.whereByUserId(v.id).subscribe((docs: Message[]) => {
-            this.newMessageCount += docs.filter((v: Message) => { return !v.is_watch }).length
+            this.newMessageCount = docs.filter((v: Message) => { return !v.is_watch }).length
           })
         });
-        this.messageDataStore.findPublicMessage().subscribe((docs: Message[]) => {
-          this.newMessageCount += docs.filter((v: Message) => { return !v.is_watch }).length
-        });
+      }
+    }
+
+    showBadgeCount(): string {
+      if (0 < this.newMessageCount) {
+        return String(this.newMessageCount)
+      } else {
+        return ""
       }
     }
     

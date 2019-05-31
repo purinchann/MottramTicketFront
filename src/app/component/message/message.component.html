@@ -1,0 +1,43 @@
+<mat-card class="base-card">
+<mat-card-subtitle>受け取り連絡など、ご利用中にお届けするメッセージです</mat-card-subtitle>
+  <table>
+      <tr *ngFor="let message of messageList">
+          <mat-card  [ngClass]="{lightGray: message.is_watch }" class="list-content-card">
+            <mat-toolbar [ngClass]="{lightGray: message.is_watch}" class="toolbar-white">
+                <p>{{ message.message_text }}</p>
+                <div class="right-position" *ngIf="message.is_watch else watched">
+                    <mat-card-subtitle class="text_position">{{ convertDateFormat(message.created_at) }}</mat-card-subtitle>
+                </div>
+                <ng-template #watched>
+                    <div class="right-position">
+                        <button mat-raised-button color="primary" class="watch-button" (click)="doWatched(message.id)">ウォッチする</button>
+                        <mat-card-subtitle class="text_position">{{ convertDateFormat(message.created_at) }}</mat-card-subtitle>
+                    </div>
+                </ng-template>
+            </mat-toolbar>
+          </mat-card>
+      </tr>
+  </table>
+</mat-card>
+
+<!-- mat-card class="base-card">
+    <mat-card-subtitle>全体に配信されるお知らせです</mat-card-subtitle>
+    <table>
+        <tr *ngFor="let publicMessage of publicMessageList">
+            <mat-card [ngClass]="{lightGray: publicMessage.is_watch}" class="list-content-card">
+              <mat-toolbar [ngClass]="{lightGray: publicMessage.is_watch}" class="toolbar-white">
+                  <p>{{ publicMessage.message_text }}</p>
+                  <div class="right-position" *ngIf="publicMessage.is_watch else watched">
+                      <mat-card-subtitle class="text_position">{{ convertDateFormat(publicMessage.created_at)}}</mat-card-subtitle>
+                  </div>
+                  <ng-template #watched>
+                      <div class="right-position">
+                          <button mat-raised-button color="primary" class="watch-button" (click)="doWatched(publicMessage.id)">ウォッチする</button>
+                          <mat-card-subtitle class="text_position">{{ convertDateFormat(publicMessage.created_at)}}</mat-card-subtitle>
+                      </div>
+                  </ng-template>
+              </mat-toolbar>
+            </mat-card>
+        </tr>
+    </table>
+</mat-card -->

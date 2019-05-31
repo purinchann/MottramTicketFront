@@ -5,6 +5,7 @@ import { SignupComponent } from '../component/signup/signup.component';
 import { DashboardComponent } from '../component/dashboard/dashboard.component';
 import { CartComponent } from '../component/cart/cart.component';
 import { OrderComponent } from '../component/order/order.component';
+import { MessageComponent } from '../component/message/message.component';
 
 export const declarations = [
     AppComponent,
@@ -12,5 +13,6 @@ export const declarations = [
     SignupComponent,
     DashboardComponent,
     CartComponent,
-    OrderComponent
+    OrderComponent,
+    MessageComponent
  ]

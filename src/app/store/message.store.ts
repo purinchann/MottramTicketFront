@@ -17,10 +17,6 @@ export class MessageDataStore {
       return this.api.afs.collection<Message>(MessageDataStore.PATH, ref => ref.where('user_id', '==', uid)).valueChanges()
   }
 
-  findPublicMessage(): Observable<Message[]> {
-      return this.api.afs.collection<Message>(MessageDataStore.PATH, ref => ref.where('is_all', '==', true)).valueChanges()
-  }
-
   updateByIsWatch(id: string): Promise<boolean> {
     return this.api.afs.doc(MessageDataStore.PATH+`/${id}`).update({'is_watch': true}).then(() => {
         return true
