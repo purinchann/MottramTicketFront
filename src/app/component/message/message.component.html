@@ -1,17 +1,17 @@
 <mat-card class="base-card">
 <mat-card-subtitle>受け取り連絡など、ご利用中にお届けするメッセージです</mat-card-subtitle>
-  <table>
-      <tr *ngFor="let message of messageList">
-          <mat-card  [ngClass]="{lightGray: message.is_watch }" class="list-content-card">
+  <table mat-table>
+      <tr mat-row *ngFor="let message of messageList">
+          <mat-card  [ngClass]="{lightGray: message.is_watch }" class="list-content-card" fxFlex.sm="90%" fxFlex.xs="90%">
             <mat-toolbar [ngClass]="{lightGray: message.is_watch}" class="toolbar-white">
-                <p>{{ message.message_text }}</p>
+                <p [ngStyle.sm]="{'font-size.px': 12}" [ngStyle.xs]="{'font-size.px': 10}">{{ message.message_text }}</p>
                 <div class="right-position" *ngIf="message.is_watch else watched">
-                    <mat-card-subtitle class="text_position">{{ convertDateFormat(message.created_at) }}</mat-card-subtitle>
+                    <mat-card-subtitle class="text_position" [ngStyle.sm]="{'font-size.px': 7}" [ngStyle.xs]="{'font-size.px': 5}">{{ convertDateFormat(message.created_at) }}</mat-card-subtitle>
                 </div>
                 <ng-template #watched>
                     <div class="right-position">
-                        <button mat-raised-button color="primary" class="watch-button" (click)="doWatched(message.id)">ウォッチする</button>
-                        <mat-card-subtitle class="text_position">{{ convertDateFormat(message.created_at) }}</mat-card-subtitle>
+                        <button mat-raised-button color="primary" class="watch-button" (click)="doWatched(message.id)" [ngStyle.xs]="{'max-width.px': 100, 'font-size.px': 5}">ウォッチする</button>
+                        <mat-card-subtitle class="text_position"  [ngStyle.sm]="{'font-size.px': 7}" [ngStyle.xs]="{'font-size.px': 5}">{{ convertDateFormat(message.created_at) }}</mat-card-subtitle>
                     </div>
                 </ng-template>
             </mat-toolbar>
