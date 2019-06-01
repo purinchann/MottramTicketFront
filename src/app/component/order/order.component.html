@@ -10,7 +10,7 @@
                       <span><p class="text_position">{{ order.size }}サイズ</p></span>
                       <span><p class="text_position">¥{{ order.price }}</p></span>
                       <div class="right-position">
-                          <button mat-raised-button color="warn" class="example-fill-remaining-space">QRコード表示</button>
+                          <button mat-raised-button color="warn" class="example-fill-remaining-space" (click)="showQRCode(order.id)">QRコード表示</button>
                           <button mat-stroked-button color="warn" class="cancel-button" (click)="doCancelEvent(order.id)">キャンセル</button>
                       </div>
                   </mat-toolbar>
@@ -28,7 +28,7 @@
                               <span><p class="text_position">{{ order.size }}サイズ</p></span>
                               <span><p class="text_position">¥{{ order.price }}</p></span>
                           <div class="right-position">
-                              <button mat-raised-button color="warn" class="example-fill-remaining-space">QRコード表示</button>
+                              <button mat-raised-button color="warn" class="example-fill-remaining-space" (click)="showQRCode(order.id)">QRコード表示</button>
                               <button mat-stroked-button color="warn" class="cancel-button" (click)="doCancelEvent(order.id)">キャンセル</button>
                           </div>
                       </mat-toolbar>
@@ -46,7 +46,7 @@
                           <span><p class="text_position">{{ order.size }}サイズ</p></span>
                           <span><p class="text_position">¥{{ order.price }}</p></span>
                           <div class="right-position">
-                              <button mat-raised-button color="warn" class="example-fill-remaining-space">QRコード表示</button>
+                              <button mat-raised-button color="warn" class="example-fill-remaining-space" (click)="showQRCode(order.id)">QRコード表示</button>
                           </div>
                       </mat-toolbar>
                     </mat-card>

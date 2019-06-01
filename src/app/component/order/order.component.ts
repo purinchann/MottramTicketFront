@@ -39,6 +39,7 @@ export class OrderComponent implements OnInit {
 
   showQRCode(orderId: string) {
     //QR Code Created
+    this.router.navigate([`/order/${orderId}`])
   }
 
   doCancelEvent(orderId: string) {

@@ -31,6 +31,9 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatTabsModule} from '@angular/material/tabs';
 
+//QR Code
+import { QRCodeModule } from 'angular2-qrcode';
+
 export const imports = [
     BrowserModule,
     FormsModule,
@@ -62,5 +65,7 @@ export const imports = [
     MatExpansionModule,
     MatTabsModule,
     //FlexLayout
-    FlexLayoutModule
+    FlexLayoutModule,
+    //QRCode
+    QRCodeModule
 ]

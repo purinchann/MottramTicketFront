@@ -6,6 +6,7 @@ import { DashboardComponent } from '../component/dashboard/dashboard.component';
 import { CartComponent } from '../component/cart/cart.component';
 import { OrderComponent } from '../component/order/order.component';
 import { MessageComponent } from '../component/message/message.component';
+import { OrderQrcodeComponent } from '../component/order-qrcode/order-qrcode.component';
 
 export const declarations = [
     AppComponent,
@@ -14,5 +15,6 @@ export const declarations = [
     DashboardComponent,
     CartComponent,
     OrderComponent,
-    MessageComponent
+    MessageComponent,
+    OrderQrcodeComponent
  ]
