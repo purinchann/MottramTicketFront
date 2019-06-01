@@ -1,6 +1,6 @@
 
-<div class="main-div">
-    <mat-card>
+<div class="main-div" fxFlex="100%" fxFlex.sm="100%" fxFlex.xs="100%">
+    <mat-card fxFlex="50%" fxFlex.sm="70%" fxFlex.xs="80%">
         <mat-card-title>新規登録</mat-card-title>
         <mat-card-content>
             <table mat-table>
@@ -30,7 +30,7 @@
             <mat-divider></mat-divider>
             <table mat-table>
                 <tr mat-row>
-                  <span><a routerLink="/login"><button mat-stroked-button color="warn" class="login-button">ログインはこちら</button></a></span>
+                  <span><button mat-stroked-button color="warn" class="auth-stroked-button" (click)="toLogin()">ログインはこちら</button></span>
                 </tr>
             </table>
         </mat-card-content>
