@@ -8,6 +8,7 @@ import { Shop } from 'src/app/model/shop';
 import * as moment from 'moment/moment';
 import { CartDataStore } from 'src/app/store/cart.store';
 import { FormGroup, FormControl } from '@angular/forms';
+import { DeviceDetectorService } from 'ngx-device-detector';
 
 @Component({
   selector: 'app-dashboard',
@@ -19,10 +20,12 @@ export class DashboardComponent implements OnInit {
   menus: Menu[];
   shop: Shop;
   selectedForm: FormGroup;
+  cols: string = "1"
 
   constructor(
     private router: Router,
     private auth: AuthService,
+    private deviceService: DeviceDetectorService,
     private menuDataStore: MenuDataStore,
     private shopDataStore: ShopDataStore,
     private cartDataStore: CartDataStore
@@ -34,6 +37,7 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit() {
     this.fetch()
+    this.judgeDevice()
   }
 
   fetch() {
@@ -48,6 +52,14 @@ export class DashboardComponent implements OnInit {
     this.shopDataStore.findById("Bhgou5g11hYztxeX2JFz").subscribe(doc => {
       this.shop = doc
     })
+  }
+
+  judgeDevice() {
+    if(this.deviceService.isMobile()) {
+      this.cols = "1"
+    } else {
+      this.cols = "3"
+    }
   }
 
   sizeAndPrices(text: string): string[] {

@@ -4,11 +4,11 @@
 </mat-card>
 <mat-card class="header-card">
     <mat-card-subtitle>モッチャムチケットの利用料金</mat-card-subtitle>
-    <p class="pink-text">商品代金 + 400円</p>
+    <p class="pink-text">商品代金 + 500円</p>
 </mat-card>
-<mat-grid-list cols="3"  rowHeight="4:10">
+<mat-grid-list cols={{cols}} rowHeight="1:1" fxLayout="row wrap" fxLayoutAlign="space-around">
     <mat-grid-tile *ngFor="let menu of menus">
-        <mat-card class="menu-card">
+        <mat-card class="menu-card" fxFlex="80%" fxFlex.sm="100%">
             <mat-card-header>
               <mat-card-title>{{ menu.name_jp }}</mat-card-title>
               <mat-card-subtitle>{{ menu.name_en }}</mat-card-subtitle>

@@ -34,6 +34,9 @@ import {MatTabsModule} from '@angular/material/tabs';
 //QR Code
 import { QRCodeModule } from 'angular2-qrcode';
 
+//Device
+import { DeviceDetectorModule } from 'ngx-device-detector';
+
 export const imports = [
     BrowserModule,
     FormsModule,
@@ -67,5 +70,7 @@ export const imports = [
     //FlexLayout
     FlexLayoutModule,
     //QRCode
-    QRCodeModule
+    QRCodeModule,
+    //Device
+    DeviceDetectorModule.forRoot()
 ]
