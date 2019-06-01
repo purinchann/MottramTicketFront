@@ -1,19 +1,16 @@
 <mat-card class="base-card">
     <mat-tab-group mat-align-tabs="center" animationDuration="1200ms" [dynamicHeight]=true color="warn">
-
         <mat-tab label="未支払い">
           <table>
             <tr *ngFor="let order of noPaidOrderList">
                 <mat-card class="list-content-card">
-                  <mat-toolbar class="toolbar-white">
-                      <span><p class="text_position">{{ order.order_name }}</p></span>
-                      <span><p class="text_position">{{ order.size }}サイズ</p></span>
-                      <span><p class="text_position">¥{{ order.price }}</p></span>
-                      <div class="right-position">
+                      <span><p class="text_position" [ngStyle.sm]="{'font-size.px': 7}" [ngStyle.xs]="{'font-size.px': 5}">{{ order.order_name }}</p></span>
+                      <span><p class="text_position" [ngStyle.sm]="{'font-size.px': 7}" [ngStyle.xs]="{'font-size.px': 5}">{{ order.size }}サイズ</p></span>
+                      <span><p class="text_position" [ngStyle.sm]="{'font-size.px': 7}" [ngStyle.xs]="{'font-size.px': 5}">¥{{ order.price }}</p></span>
+                      <mat-card-actions class="action-buttons">
                           <button mat-raised-button color="warn" class="example-fill-remaining-space" (click)="showQRCode(order.id)">QRコード表示</button>
                           <button mat-stroked-button color="warn" class="cancel-button" (click)="doCancelEvent(order.id)">キャンセル</button>
-                      </div>
-                  </mat-toolbar>
+                      </mat-card-actions>
                 </mat-card>
             </tr>
           </table>
@@ -23,15 +20,13 @@
             <table>
                 <tr *ngFor="let order of makingOrderList">
                     <mat-card class="list-content-card">
-                      <mat-toolbar class="toolbar-white">
-                              <span><p class="text_position">{{ order.order_name }}</p></span>
-                              <span><p class="text_position">{{ order.size }}サイズ</p></span>
-                              <span><p class="text_position">¥{{ order.price }}</p></span>
-                          <div class="right-position">
-                              <button mat-raised-button color="warn" class="example-fill-remaining-space" (click)="showQRCode(order.id)">QRコード表示</button>
-                              <button mat-stroked-button color="warn" class="cancel-button" (click)="doCancelEvent(order.id)">キャンセル</button>
-                          </div>
-                      </mat-toolbar>
+                              <span><p class="text_position" [ngStyle.sm]="{'font-size.px': 7}" [ngStyle.xs]="{'font-size.px': 5}">{{ order.order_name }}</p></span>
+                              <span><p class="text_position" [ngStyle.sm]="{'font-size.px': 7}" [ngStyle.xs]="{'font-size.px': 5}">{{ order.size }}サイズ</p></span>
+                              <span><p class="text_position" [ngStyle.sm]="{'font-size.px': 7}" [ngStyle.xs]="{'font-size.px': 5}">¥{{ order.price }}</p></span>
+                              <mat-card-actions class="action-buttons">
+                                  <button mat-raised-button color="warn" class="example-fill-remaining-space" (click)="showQRCode(order.id)">QRコード表示</button>
+                                  <button mat-stroked-button color="warn" class="cancel-button" (click)="doCancelEvent(order.id)">キャンセル</button>
+                              </mat-card-actions>
                     </mat-card>
                 </tr>
               </table>
@@ -41,14 +36,12 @@
             <table>
                 <tr *ngFor="let order of waitDeliveryOrderList">
                     <mat-card class="list-content-card">
-                      <mat-toolbar class="toolbar-white">
-                          <span><p class="text_position">{{ order.order_name }}</p></span>
-                          <span><p class="text_position">{{ order.size }}サイズ</p></span>
-                          <span><p class="text_position">¥{{ order.price }}</p></span>
-                          <div class="right-position">
+                          <span><p class="text_position" [ngStyle.sm]="{'font-size.px': 7}" [ngStyle.xs]="{'font-size.px': 5}">{{ order.order_name }}</p></span>
+                          <span><p class="text_position" [ngStyle.sm]="{'font-size.px': 7}" [ngStyle.xs]="{'font-size.px': 5}">{{ order.size }}サイズ</p></span>
+                          <span><p class="text_position" [ngStyle.sm]="{'font-size.px': 7}" [ngStyle.xs]="{'font-size.px': 5}">¥{{ order.price }}</p></span>
+                          <mat-card-actions class="action-buttons">
                               <button mat-raised-button color="warn" class="example-fill-remaining-space" (click)="showQRCode(order.id)">QRコード表示</button>
-                          </div>
-                      </mat-toolbar>
+                          </mat-card-actions>
                     </mat-card>
                 </tr>
               </table>
@@ -58,11 +51,9 @@
             <table>
                 <tr *ngFor="let order of historyOrder">
                     <mat-card class="list-content-card">
-                      <mat-toolbar class="toolbar-white">
-                          <span><p class="text_position">{{ order.order_name }}</p></span>
-                          <span><p class="text_position">{{ order.size }}サイズ</p></span>
-                          <span><p class="text_position">¥{{ order.price }}</p></span>
-                      </mat-toolbar>
+                          <span><p class="text_position" [ngStyle.sm]="{'font-size.px': 7}" [ngStyle.xs]="{'font-size.px': 5}">{{ order.order_name }}</p></span>
+                          <span><p class="text_position" [ngStyle.sm]="{'font-size.px': 7}" [ngStyle.xs]="{'font-size.px': 5}">{{ order.size }}サイズ</p></span>
+                          <span><p class="text_position" [ngStyle.sm]="{'font-size.px': 7}" [ngStyle.xs]="{'font-size.px': 5}">¥{{ order.price }}</p></span>
                     </mat-card>
                 </tr>
               </table>
