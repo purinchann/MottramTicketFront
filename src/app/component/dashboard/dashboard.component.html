@@ -1,10 +1,10 @@
 <mat-card class="header-card">
-  <p>ただいまのモッチャム大名店の待ち時間</p>
-  <p>{{ shop.current_wait_time }}分</p>
+    <mat-card-subtitle>ただいまのモッチャム大名店の待ち時間</mat-card-subtitle>
+    <p class="pink-text">{{ shop.current_wait_time }}分</p>
 </mat-card>
 <mat-card class="header-card">
-    <p>モッチャムチケットの利用料金</p>
-    <p>商品代金 + {{ shop.fee }}円</p>
+    <mat-card-subtitle>モッチャムチケットの利用料金</mat-card-subtitle>
+    <p class="pink-text">商品代金 + 400円</p>
 </mat-card>
 <mat-grid-list cols="3"  rowHeight="4:10">
     <mat-grid-tile *ngFor="let menu of menus">
