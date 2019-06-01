@@ -18,6 +18,16 @@
         </tbody>
       </table>
 </mat-card>
+<mat-card class="total-show-card">
+    <mat-card-subtitle>商品合計個数</mat-card-subtitle>
+    <p>{{ cartList.length }} 個</p>
+    <mat-card-subtitle>商品合計代金</mat-card-subtitle>
+    <p>{{ totalItemPrice() }}円</p>
+    <mat-card-subtitle>モッチャムチケットの合計手数料</mat-card-subtitle>
+    <p>{{ totalFee() }}円</p>
+    <p>合計金額</p>
+    <p>{{ totalItemPrice() + totalFee() }}円</p>
+</mat-card>
 <mat-card class="footer-card">
     <mat-card-content class="order-card">
       <p>こちらのボタンをクリックしたら注文が確定します。</p>

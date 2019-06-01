@@ -79,4 +79,17 @@ export class CartComponent implements OnInit {
     });
   }
 
+  totalItemPrice(): number {
+    
+    var itemPrice: number = 0;
+    this.cartList.forEach(v => {
+      itemPrice += v.price
+    })
+    return itemPrice
+  }
+
+  totalFee(): number {
+    return this.cartList.length * 400
+  }
+
 }
