@@ -2,31 +2,31 @@
     <table mat-table>
         <thead>
           <tr>
-            <th>商品名</th>
-            <th>サイズ</th>
-            <th>価格</th>
+            <th [ngStyle.sm]="{'font-size.px': 10}" [ngStyle.xs]="{'font-size.px': 10}">商品名</th>
+            <th [ngStyle.sm]="{'font-size.px': 10}" [ngStyle.xs]="{'font-size.px': 10}">サイズ</th>
+            <th [ngStyle.sm]="{'font-size.px': 10}" [ngStyle.xs]="{'font-size.px': 10}">価格</th>
             <th></th>
           </tr>
         </thead>
         <tbody>
             <tr *ngFor="let cart of cartList; let i = index">
-                <td>{{ cart.menu_name }}</td>
-                <td>{{ cart.size }}サイズ</td>
-                <td>¥{{ cart.price }}</td>
-                <td><button mat-stroked-button color="warn" class="delete-button" (click)="deleteCart(cart.id)">カートから削除</button></td>
+                <td [ngStyle.sm]="{'font-size.px': 10}" [ngStyle.xs]="{'font-size.px': 10}">{{ cart.menu_name }}</td>
+                <td [ngStyle.sm]="{'font-size.px': 8}" [ngStyle.xs]="{'font-size.px': 8}">{{ cart.size }}サイズ</td>
+                <td [ngStyle.sm]="{'font-size.px': 10}" [ngStyle.xs]="{'font-size.px': 10}">¥{{ cart.price }}</td>
+                <td><button mat-stroked-button color="warn" class="delete-button" (click)="deleteCart(cart.id)" [ngStyle.sm]="{'font-size.px': 8}" [ngStyle.xs]="{'font-size.px': 5}">カートから削除</button></td>
             </tr>
         </tbody>
       </table>
 </mat-card>
 <mat-card class="total-show-card">
-    <mat-card-subtitle>商品合計個数</mat-card-subtitle>
-    <p class="light-gray-text">{{ cartList.length }} 個</p>
-    <mat-card-subtitle>商品合計代金</mat-card-subtitle>
-    <p class="light-gray-text">{{ totalItemPrice() }}円</p>
-    <mat-card-subtitle>モッチャムチケットの合計手数料</mat-card-subtitle>
-    <p class="light-gray-text">{{ totalFee() }}円</p>
-    <mat-card-subtitle>合計金額</mat-card-subtitle>
-    <mat-card-title class="light-gray-text">{{ totalItemPrice() + totalFee() }}円</mat-card-title>
+    <mat-card-subtitle [ngStyle.sm]="{'font-size.px': 10}" [ngStyle.xs]="{'font-size.px': 10}">商品合計個数</mat-card-subtitle>
+    <p class="light-gray-text" [ngStyle.sm]="{'font-size.px': 12}" [ngStyle.xs]="{'font-size.px': 12}">{{ cartList.length }} 個</p>
+    <mat-card-subtitle [ngStyle.sm]="{'font-size.px': 10}" [ngStyle.xs]="{'font-size.px': 10}">商品合計代金</mat-card-subtitle>
+    <p class="light-gray-text" [ngStyle.sm]="{'font-size.px': 12}" [ngStyle.xs]="{'font-size.px': 12}">{{ totalItemPrice() }}円</p>
+    <mat-card-subtitle [ngStyle.sm]="{'font-size.px': 10}" [ngStyle.xs]="{'font-size.px': 10}">モッチャムチケットの合計手数料</mat-card-subtitle>
+    <p class="light-gray-text" [ngStyle.sm]="{'font-size.px': 12}" [ngStyle.xs]="{'font-size.px': 12}">{{ totalFee() }}円</p>
+    <mat-card-subtitle [ngStyle.sm]="{'font-size.px': 10}" [ngStyle.xs]="{'font-size.px': 10}">合計金額</mat-card-subtitle>
+    <mat-card-title class="light-gray-text" [ngStyle.sm]="{'font-size.px': 12}" [ngStyle.xs]="{'font-size.px': 12}">{{ totalItemPrice() + totalFee() }}円</mat-card-title>
 </mat-card>
 <mat-card class="footer-card">
     <mat-card-content class="order-card">
