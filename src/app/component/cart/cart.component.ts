@@ -66,7 +66,10 @@ export class CartComponent implements OnInit {
             'order_date': moment().format('YYYYMMDD'),
             'order_time': moment().format('YYYYMMDDHHmm'),
             'menu_id': v.menu_id,
-            'shop_id': v.shop_id
+            'shop_id': v.shop_id,
+            'paid_user_id': '',
+            'buyer_id': '',
+            'delivered_user_id': ''
           }
 
           this.orderDataStore.add(params).then(isRes => {
