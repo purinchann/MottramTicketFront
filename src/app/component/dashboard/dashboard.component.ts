@@ -62,6 +62,14 @@ export class DashboardComponent implements OnInit {
     }
   }
 
+  hm_string(timeStr: string): string {
+    if (!timeStr) return '';
+    let time = Number(timeStr)
+    let hours = Math.floor(time / 60);
+    let minits = time % 60;
+    return hours + "時間" + minits + "分";
+  }
+
   sizeAndPrices(text: string): string[] {
     return text.split(',').map(v => {
       const size = `${v.slice(0, 1)}サイズ`
