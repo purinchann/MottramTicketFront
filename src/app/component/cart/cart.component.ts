@@ -43,7 +43,16 @@ export class CartComponent implements OnInit {
 
   addOrder() {
 
-    if (this.cartList.length == 0) return;
+    if (this.cartList.length == 0) {
+      confirm('カートに商品がありません')
+      return;
+    }
+
+    if (!this.isInBusinessHours()) {
+      confirm('注文を受け付けている時間帯は午前11時〜午後18時までです')
+      return;
+    }
+
     const lastIndex = this.cartList.length - 1
     this.cartList.forEach((v, i) => {
       this.cartDataStore.update(v.id).then(isRes => {
@@ -80,6 +89,18 @@ export class CartComponent implements OnInit {
         }
       });
     });
+  }
+
+  isInBusinessHours(): boolean {
+        
+      let nowStr = moment().format("HH:mm:ss")
+      let start = "11:00:00"
+      let end = "18:00:00"
+      if (start <= nowStr && nowStr <= end) {
+          return true
+      } else {
+          return false
+      }
   }
 
   totalItemPrice(): number {
