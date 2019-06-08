@@ -78,6 +78,10 @@ export class DashboardComponent implements OnInit {
     })
   }
 
+  toMapPage() {
+    this.router.navigate(['/map'])
+  }
+
   addCart(menu: Menu) {
     const timestamp = moment().unix()*1000;
     const uid = this.auth.currentUserId()

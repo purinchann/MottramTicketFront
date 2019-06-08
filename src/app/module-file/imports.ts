@@ -37,6 +37,9 @@ import { QRCodeModule } from 'angular2-qrcode';
 //Device
 import { DeviceDetectorModule } from 'ngx-device-detector';
 
+//Google Maps
+import { AgmCoreModule } from '@agm/core';
+
 export const imports = [
     BrowserModule,
     FormsModule,
@@ -72,5 +75,7 @@ export const imports = [
     //QRCode
     QRCodeModule,
     //Device
-    DeviceDetectorModule.forRoot()
+    DeviceDetectorModule.forRoot(),
+    //Google Maps
+    AgmCoreModule.forRoot({apiKey: 'AIzaSyAuRdSW09bvcliHfPMr2mGkoAJVE2_bCKI'})
 ]

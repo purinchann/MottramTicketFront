@@ -3,7 +3,6 @@ import { AuthService } from 'src/app/service/auth.service';
 import { Router } from '@angular/router';
 import { MessageDataStore } from 'src/app/store/message.store';
 import { Message } from 'src/app/model/message';
-import { Observable } from 'rxjs';
 import * as moment from 'moment/moment';
 import { AppComponent } from 'src/app/app.component';
 

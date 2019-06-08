@@ -9,5 +9,7 @@ export interface Shop {
     fee?: number;
     order_limit?: number;
     business_hours?: string;
-    tel?: string
+    tel?: string;
+    //latitude?: string;
+    //longitude?: string;
 }
