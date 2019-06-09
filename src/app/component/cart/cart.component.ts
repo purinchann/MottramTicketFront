@@ -78,7 +78,8 @@ export class CartComponent implements OnInit {
             'shop_id': v.shop_id,
             'paid_user_id': '',
             'buyer_id': '',
-            'delivered_user_id': ''
+            'delivered_user_id': '',
+            'image_url': v.image_url
           }
 
           this.orderDataStore.add(params).then(isRes => {

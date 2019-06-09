@@ -9,4 +9,5 @@ export interface Cart {
     menu_id?: string;
     shop_id?: string;
     is_order?: boolean;
+    image_url?: string;
 }

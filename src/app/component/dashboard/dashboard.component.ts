@@ -108,7 +108,8 @@ export class DashboardComponent implements OnInit {
       'created_at': timestamp,
       'menu_id': menu.id,
       'shop_id': this.shop.id,
-      'is_order': false
+      'is_order': false,
+      'image_url': menu.image_url
     }
     this.cartDataStore.add(params).then(res => {
       if (res) {

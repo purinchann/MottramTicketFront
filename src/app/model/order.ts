@@ -15,6 +15,7 @@ export interface Order {
     order_time?: string;
     menu_id?: string;
     shop_id?: string;
+    image_url?: string;
     // ↓user管理
     paid_user_id?: string;
     buyer_id?: string;
