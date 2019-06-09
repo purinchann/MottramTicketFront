@@ -9,6 +9,8 @@ import * as moment from 'moment/moment';
 import { CartDataStore } from 'src/app/store/cart.store';
 import { FormGroup, FormControl } from '@angular/forms';
 import { DeviceDetectorService } from 'ngx-device-detector';
+import { Ad } from 'src/app/model/ad';
+import { AdDataStore } from 'src/app/store/ad.store';
 
 @Component({
   selector: 'app-dashboard',
@@ -19,6 +21,7 @@ export class DashboardComponent implements OnInit {
 
   menus: Menu[];
   shop: Shop;
+  ad: Ad;
   selectedForm: FormGroup;
   cols: string = "1"
 
@@ -28,7 +31,8 @@ export class DashboardComponent implements OnInit {
     private deviceService: DeviceDetectorService,
     private menuDataStore: MenuDataStore,
     private shopDataStore: ShopDataStore,
-    private cartDataStore: CartDataStore
+    private cartDataStore: CartDataStore,
+    private adDataStore: AdDataStore
   ) { 
     this.selectedForm = new FormGroup({
       size_and_price: new FormControl('')
@@ -51,6 +55,10 @@ export class DashboardComponent implements OnInit {
 
     this.shopDataStore.findById("Bhgou5g11hYztxeX2JFz").subscribe(doc => {
       this.shop = doc
+    })
+
+    this.adDataStore.find().subscribe(doc => {
+      this.ad = doc
     })
   }
 
