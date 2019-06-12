@@ -38,7 +38,7 @@ export class MessageComponent implements OnInit {
   }
 
   convertDateFormat(unixtime_ms: number): string {
-    return moment.unix(unixtime_ms/1000).format('YYYY年MM月DD日 HH時mm分')
+    return moment.unix(unixtime_ms/1000).format('MM月DD日 HH時mm分')
   }
 
   doWatched(id: string) {
