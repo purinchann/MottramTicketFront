@@ -4,6 +4,7 @@
           <table>
             <tr *ngFor="let order of noPaidOrderList">
                 <mat-card class="list-content-card">
+                      <img mat-card-image class="item-img" src="{{ order.image_url }}">
                       <span><p class="text_position" [ngStyle.sm]="{'font-size.px': 7}" [ngStyle.xs]="{'font-size.px': 5}">{{ order.order_name }}</p></span>
                       <span><p class="text_position" [ngStyle.sm]="{'font-size.px': 7}" [ngStyle.xs]="{'font-size.px': 5}">{{ order.size }}サイズ</p></span>
                       <span><p class="text_position" [ngStyle.sm]="{'font-size.px': 7}" [ngStyle.xs]="{'font-size.px': 5}">¥{{ order.price }}</p></span>
@@ -20,6 +21,7 @@
             <table>
                 <tr *ngFor="let order of makingOrderList">
                     <mat-card class="list-content-card">
+                              <img mat-card-image class="item-img" src="{{ order.image_url }}">
                               <span><p class="text_position" [ngStyle.sm]="{'font-size.px': 7}" [ngStyle.xs]="{'font-size.px': 5}">{{ order.order_name }}</p></span>
                               <span><p class="text_position" [ngStyle.sm]="{'font-size.px': 7}" [ngStyle.xs]="{'font-size.px': 5}">{{ order.size }}サイズ</p></span>
                               <span><p class="text_position" [ngStyle.sm]="{'font-size.px': 7}" [ngStyle.xs]="{'font-size.px': 5}">¥{{ order.price }}</p></span>
@@ -36,6 +38,7 @@
             <table>
                 <tr *ngFor="let order of waitDeliveryOrderList">
                     <mat-card class="list-content-card">
+                          <img mat-card-image class="item-img" src="{{ order.image_url }}">
                           <span><p class="text_position" [ngStyle.sm]="{'font-size.px': 7}" [ngStyle.xs]="{'font-size.px': 5}">{{ order.order_name }}</p></span>
                           <span><p class="text_position" [ngStyle.sm]="{'font-size.px': 7}" [ngStyle.xs]="{'font-size.px': 5}">{{ order.size }}サイズ</p></span>
                           <span><p class="text_position" [ngStyle.sm]="{'font-size.px': 7}" [ngStyle.xs]="{'font-size.px': 5}">¥{{ order.price }}</p></span>
@@ -51,6 +54,7 @@
             <table>
                 <tr *ngFor="let order of historyOrder">
                     <mat-card class="list-content-card">
+                          <img mat-card-image class="item-img" src="{{ order.image_url }}">
                           <span><p class="text_position" [ngStyle.sm]="{'font-size.px': 7}" [ngStyle.xs]="{'font-size.px': 5}">{{ order.order_name }}</p></span>
                           <span><p class="text_position" [ngStyle.sm]="{'font-size.px': 7}" [ngStyle.xs]="{'font-size.px': 5}">{{ order.size }}サイズ</p></span>
                           <span><p class="text_position" [ngStyle.sm]="{'font-size.px': 7}" [ngStyle.xs]="{'font-size.px': 5}">¥{{ order.price }}</p></span>
