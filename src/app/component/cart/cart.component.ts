@@ -96,7 +96,7 @@ export class CartComponent implements OnInit {
         
       let nowStr = moment().format("HH:mm:ss")
       let start = "11:00:00"
-      let end = "18:00:00"
+      let end = "17:00:00"
       if (start <= nowStr && nowStr <= end) {
           return true
       } else {

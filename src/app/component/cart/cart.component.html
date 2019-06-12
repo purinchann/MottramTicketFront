@@ -2,6 +2,7 @@
     <table mat-table>
         <thead>
           <tr>
+            <th></th>
             <th [ngStyle.sm]="{'font-size.px': 10}" [ngStyle.xs]="{'font-size.px': 10}">商品名</th>
             <th [ngStyle.sm]="{'font-size.px': 10}" [ngStyle.xs]="{'font-size.px': 10}">サイズ</th>
             <th [ngStyle.sm]="{'font-size.px': 10}" [ngStyle.xs]="{'font-size.px': 10}">価格</th>
@@ -10,6 +11,7 @@
         </thead>
         <tbody>
             <tr *ngFor="let cart of cartList; let i = index">
+                <td><img class="item-img" src="{{ cart.image_url }}"></td>
                 <td [ngStyle.sm]="{'font-size.px': 10}" [ngStyle.xs]="{'font-size.px': 10}">{{ cart.menu_name }}</td>
                 <td [ngStyle.sm]="{'font-size.px': 8}" [ngStyle.xs]="{'font-size.px': 8}">{{ cart.size }}サイズ</td>
                 <td [ngStyle.sm]="{'font-size.px': 10}" [ngStyle.xs]="{'font-size.px': 10}">¥{{ cart.price }}</td>
