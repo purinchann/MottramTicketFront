@@ -24,7 +24,7 @@ export class AuthGuard implements CanActivate {
       map(user => !!user), // userが取得できた場合はtrueを返す
       tap(loggedIn => {
         if (!loggedIn) {
-          this.router.navigate(['/login']);
+          this.router.navigate(['/top']);
         }
       })
     );

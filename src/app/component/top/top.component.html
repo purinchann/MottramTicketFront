@@ -1,0 +1,114 @@
+
+<div class="base">
+    <!-- Hader -->
+    <div class="header">
+        <div>
+          <p class="header-title">これからのモッチャムはいつでも<br>お手軽にGetしよう。</p>
+        </div>
+          <p class="header-subtitle">モッチャム大名店限定 並ぶ代役! <br>モッチャム整理券サービス</p>
+    </div>
+    <!--con1 -->
+    <div class="con1">
+        <h1 class="con1-title" style="display:inline;"> モッチャム飲みたいけど・・・ </h1>
+        <mat-list class="con1-list">
+          <mat-list-item>
+              <mat-icon mat-list-icon>check_box</mat-icon> 
+              <p>電車2両に相当する行列の最後尾を見たら戦意喪失した</p>
+          </mat-list-item>
+          <mat-list-item>
+              <mat-icon mat-list-icon>check_box</mat-icon> 
+              <p>電車2両に相当する行列の最後尾を見たら戦意喪失した</p>
+          </mat-list-item>
+          <mat-list-item>
+              <mat-icon mat-list-icon>check_box</mat-icon> 
+              <p>このあとも予定があるのに汗かいてまで並ぶのはしんどい</p>
+          </mat-list-item>
+          <mat-list-item>
+              <mat-icon mat-list-icon>check_box</mat-icon>
+              <p>並ぶ時間を気にして、自分の予定を組むのは馬鹿らしい</p>
+          </mat-list-item>
+          <mat-list-item>
+              <mat-icon mat-list-icon>check_box</mat-icon>
+              <p>野球球児じゃあるまいし、夏、外に長時間立たされるのはきつい</p>
+          </mat-list-item>
+          <mat-list-item>
+              <mat-icon mat-list-icon>check_box</mat-icon>
+              <p>いつも並んでいるのをみて断念しちゃう</p>
+          </mat-list-item>
+        </mat-list>
+        <mat-card class="background-card">
+          <mat-card-title>モッチャムチケットを使えば<br><span>並ぶ</span>必要がなくなります。</mat-card-title>
+        </mat-card>
+    </div>
+    <!--con2 -->
+    <div class="con2">
+      <mat-card class="background-card"> 
+        <mat-card-title>
+            モッチャムチケットは<br>
+            あなたの代わりにモッチャムの行列に並び<br>
+            あなたが飲みたいタピオカを手に入れて<br>
+            あなたにお渡しする<br>
+            <span>タピオカ整理券サービス</span>です。
+        </mat-card-title>
+      </mat-card>
+    </div>
+    <!--con3 -->
+    <div class="con3">
+        <h1><span>モッチャムチケット</span>を使い<br>本来であれば並んでいる時間で・・・</h1>
+        <mat-grid-list cols="{{ cols }}" rowHeight="1:1" fxLayout="row wrap" fxLayoutAlign="space-around">
+          <mat-grid-tile><img src="/assets/images/can01.png" alt="ショッピングを楽しむ"></mat-grid-tile>
+          <mat-grid-tile><img src="/assets/images/can02.png" alt="他のタピオカ店をタピ巡りをする"></mat-grid-tile>
+          <mat-grid-tile><img src="/assets/images/can03.png" alt="時間が合わない友達の文も先に注文しておいて待ち合わせをする"></mat-grid-tile>
+        </mat-grid-list>
+        <h2>...といったことができます</h2>
+        <h1 class="con3-close-title">この夏は<span>スマート</span>に<br>モッチャムのタピオカを飲みましょう。</h1>
+    </div>
+    <!-- con4 -->
+    <div class="con4">
+        <h1>モッチャムチケットの使い方</h1>
+        <div><img src="/assets/images/ticketG01.png" alt="ステップ1"></div>
+        <mat-card>
+          <mat-card-title>アプリ・サイトから注文</mat-card-title>
+        </mat-card>
+        <ul>
+            <li>■メニューから商品を選択してカートに追加</li>
+            <li>■カートから注文確定</li>
+        </ul>
+        <div><img src="/assets/images/ticketG02.png" alt="ステップ2"></div>
+        <mat-card>
+          <mat-card-title>モッチャムチケットのスタッフにQRコードを見せて支払い</mat-card-title>
+        </mat-card>
+        <div><img src="/assets/images/ticketG03.png" alt="ステップ3"></div>
+        <mat-card>
+            <mat-card-title>待ち時間/メールが届く</mat-card-title>
+        </mat-card>
+        <div><img src="/assets/images/ticketG04.png" alt="ステップ4"></div>
+        <mat-card>
+            <mat-card-title>タピオカを受け取りにモッチャムチケットスタッフのもとへ</mat-card-title>
+        </mat-card>
+    </div>
+    <!-- con5 -->
+    <div class="con5">
+        <h3>料金</h3>
+        <p>一律500円</p>
+        　<span>※手数料は今後改定される可能性がございます。</span>
+        <h3>注文受付時間帯</h3>
+        <p>午前11:00〜午後17時まで</p>
+        <h3>お支払い&受け渡し場所</h3>
+        <p>モッチャム大名店近辺<br>
+          アプリ/サイトにログイン後、<br>詳細の場所はマップでご確認いただけます。</p>
+    </div>
+    <div class="con6">
+      <button  mat-raised-button color="warn" class="textfield-row" (click)="toSignup()">新規登録はこちら</button>
+      <button mat-stroked-button (click)="toLogin()" color="warn" class="auth-stroked-button">ログインはこちら</button>
+    </div>
+    <!-- Footer -->
+    <div class="footer">
+        <ul class="footer-ul">
+          <li class="footer-li"><a class="footer-a" routerLink='/tos'>利用規約</a></li>
+          <li class="footer-li"><a class="footer-a" routerLink='/privacypolicy'>Privacy Policy</a></li>
+          <li class="footer-li"><a class="footer-a" routerLink='/contact'>お問い合わせ</a></li>
+        </ul>
+        <div class="footer__copyright"> <span>©Yousuke Nakamura</span> </div>
+    </div>
+</div>
