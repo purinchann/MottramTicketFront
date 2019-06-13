@@ -1,0 +1,54 @@
+<div class="ad-div">
+  <a href="{{ ad.page_url }}"><img class="ad-img" src="{{ ad.banner_image_url }}" alt="ad.jpeg"></a>
+</div>
+<div class="header-card">
+  <button mat-raised-button class="map-button" color="primary" (click)='toMapPage()' [ngStyle.sm]="{'font-size.px': 14}" [ngStyle.xs]="{'font-size.px': 12}">モッチャムチケットスタッフがいる場所をMAPで確認</button>
+</div>
+<mat-card class="header-card">
+    <mat-card-subtitle>ただいまのモッチャム大名店の待ち時間</mat-card-subtitle>
+    <p class="pink-text">{{ hm_string(shop.current_wait_time) }}待ち</p>
+</mat-card>
+<mat-card class="header-card">
+    <mat-card-subtitle>モッチャムチケットの利用料金</mat-card-subtitle>
+    <p class="pink-text">商品代金 + 500円</p>
+</mat-card>
+<mat-grid-list cols={{cols}} rowHeight="1:1" fxLayout="row wrap" fxLayoutAlign="space-around">
+    <mat-grid-tile *ngFor="let menu of menus">
+        <mat-card class="menu-card" fxFlex="80%" fxFlex.sm="100%">
+            <mat-card-header>
+              <mat-card-title>{{ menu.name_jp }}</mat-card-title>
+              <mat-card-subtitle>{{ menu.name_en }}</mat-card-subtitle>
+            </mat-card-header>
+            <img mat-card-image src="{{ menu.image_url }}">
+            <mat-card-actions>
+                <mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                      <mat-panel-title>カートに追加</mat-panel-title>
+                      <mat-panel-description>サイズを選んでカートに追加しよう</mat-panel-description>
+                    </mat-expansion-panel-header>
+                    <mat-list role="list">
+                        <mat-list-item role="listitem">
+                            <mat-form-field [formGroup]="selectedForm">
+                                <mat-label>サイズを選択する</mat-label>
+                                <mat-select formControlName="size_and_price">
+                                  <mat-option *ngFor="let sizeAndPriceText of sizeAndPrices(menu.price_and_size)" [value]="sizeAndPriceText">
+                                    {{ sizeAndPriceText }}
+                                  </mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </mat-list-item>
+                        <mat-list-item role="listitem">
+                            <button mat-raised-button color="primary" (click)="addCart(menu)"><mat-icon class="icon">add_shopping_cart</mat-icon>カートへ追加</button>
+                        </mat-list-item>
+                      </mat-list>
+                  </mat-expansion-panel>
+            </mat-card-actions>
+          </mat-card>
+    </mat-grid-tile>
+</mat-grid-list>
+<mat-card class="footer-card">
+    <mat-card-content class="order-card">
+      <p>カート画面から注文を確定させてください。</p>
+      <button mat-raised-button color="warn" class="order-button" (click)="toCartPage()">カート画面へ進む</button>
+    </mat-card-content>
+</mat-card>

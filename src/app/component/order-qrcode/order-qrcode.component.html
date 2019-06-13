@@ -1,0 +1,11 @@
+<mat-card class="base-card">
+    <mat-card-header>
+      <button mat-icon-button color="warn" class="back-button" (click)='toBackPage()'><mat-icon class="icon">keyboard_arrow_left</mat-icon>前のページに戻る</button>
+    </mat-card-header>
+    <mat-card-title>注文情報のQRコード</mat-card-title>
+    <mat-card-subtitle>モッチャムチケットのスタッフにQRコードを見せてください。</mat-card-subtitle>
+    <mat-card-content>この注文のIDは...<p class="pink-text">{{ orderId }}</p></mat-card-content>
+  <div>
+      <qr-code [value]="orderId" [size]="300" canvas="true"></qr-code>
+  </div>
+</mat-card>
