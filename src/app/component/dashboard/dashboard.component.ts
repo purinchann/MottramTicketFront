@@ -70,9 +70,8 @@ export class DashboardComponent implements OnInit {
     }
   }
 
-  hm_string(timeStr: string): string {
-    if (!timeStr) return '';
-    let time = Number(timeStr)
+  hm_string(time: number): string {
+    if (!time) return '0';
     let hours = Math.floor(time / 60);
     let minits = time % 60;
     return hours + "時間" + minits + "分";
