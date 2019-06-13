@@ -11,14 +11,12 @@ import { MapComponent } from '../component/map/map.component';
 import { TopComponent } from '../component/top/top.component';
 import { PrivacypolicyComponent } from '../component/privacypolicy/privacypolicy.component';
 import { TosComponent } from '../component/tos/tos.component';
-import { ContactComponent } from '../component/contact/contact.component';
 
 export const declarations = [
     AppComponent,
     TopComponent,
     PrivacypolicyComponent,
     TosComponent,
-    ContactComponent,
     LoginComponent,
     SignupComponent,
     DashboardComponent,
