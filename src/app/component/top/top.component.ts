@@ -29,10 +29,12 @@ export class TopComponent implements OnInit {
   }
 
   toLogin() {
-    this.router.navigate(['/login'])
+    //this.router.navigate(['/login'])
+    this.router.navigate(['/comingsoon'])
   }
 
   toSignup() {
-    this.router.navigate(['/signup'])
+    //this.router.navigate(['/signup'])
+    this.router.navigate(['/comingsoon'])
   }
 }

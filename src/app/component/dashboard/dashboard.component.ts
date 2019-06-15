@@ -57,9 +57,9 @@ export class DashboardComponent implements OnInit {
       this.shop = doc
     })
 
-    this.adDataStore.find().subscribe(doc => {
-      this.ad = doc
-    })
+    // this.adDataStore.find().subscribe(doc => {
+    //   this.ad = doc
+    // })
   }
 
   judgeDevice() {
