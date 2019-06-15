@@ -42,13 +42,13 @@ export class AppComponent {
     }
     
     toLogin() {
-       //this.router.navigate(['/login'])
-      this.router.navigate(['/comingsoon'])
+      this.router.navigate(['/login'])
+      //this.router.navigate(['/comingsoon'])
     }
 
     toSignup() {
-      //this.router.navigate(['/signup'])
-      this.router.navigate(['/comingsoon'])
+      this.router.navigate(['/signup'])
+      //this.router.navigate(['/comingsoon'])
     }
 
     logout() {

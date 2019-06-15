@@ -5,6 +5,8 @@ import { Cart } from 'src/app/model/cart';
 import * as moment from 'moment/moment';
 import { OrderDataStore } from 'src/app/store/order.store';
 import { Router } from '@angular/router';
+import { ShopDataStore } from 'src/app/store/shop.store';
+import { Shop } from 'src/app/model/shop';
 
 @Component({
   selector: 'app-cart',
@@ -14,12 +16,14 @@ import { Router } from '@angular/router';
 export class CartComponent implements OnInit {
 
   cartList: Cart[]
+  shop: Shop;
 
   constructor(
     private router: Router,
     private auth: AuthService,
     private cartDataStore: CartDataStore,
-    private orderDataStore: OrderDataStore
+    private orderDataStore: OrderDataStore,
+    private shopDataStore: ShopDataStore
   ) { }
 
   ngOnInit() {
@@ -30,6 +34,10 @@ export class CartComponent implements OnInit {
     const uid = this.auth.currentUserId()
     this.cartDataStore.whereByUserId(uid).subscribe(docs => {
       this.cartList = docs.filter(v => { return !v.is_order })
+    })
+
+    this.shopDataStore.findById("Bhgou5g11hYztxeX2JFz").subscribe(doc => {
+      this.shop = doc
     })
   }
 
@@ -49,7 +57,11 @@ export class CartComponent implements OnInit {
     }
 
     if (!this.isInBusinessHours()) {
-      confirm('注文を受け付けている時間帯は午前11時〜午後18時までです')
+      const businessHours = this.shop.business_hours
+      const businessHoursArray = businessHours.split('〜')
+      let start = businessHoursArray[0]
+      let end = businessHoursArray[1]
+      confirm(`本日、注文を受け付けている時間帯は${start}〜${end}までです`)
       return;
     }
 
@@ -95,8 +107,12 @@ export class CartComponent implements OnInit {
   isInBusinessHours(): boolean {
         
       let nowStr = moment().format("HH:mm:ss")
-      let start = "11:00:00"
-      let end = "17:00:00"
+      const businessHours = this.shop.business_hours
+      const businessHoursArray = businessHours.split('〜')
+      let start = businessHoursArray[0] + ':00'
+      let end = businessHoursArray[1] + ':00'
+      // let start = "11:00:00"
+      // let end = "17:00:00"
       if (start <= nowStr && nowStr <= end) {
           return true
       } else {
